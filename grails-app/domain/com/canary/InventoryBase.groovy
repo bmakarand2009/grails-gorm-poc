@@ -1,20 +1,20 @@
 package com.canary
 /*
  DELIMITER //
-CREATE TRIGGER product_base_before_trigger BEFORE INSERT ON product_base
+CREATE TRIGGER inventory_base_before_trigger BEFORE INSERT ON inventory_base
  FOR EACH ROW begin
   SET new.guId = uuid();
   SET new.tenant = SUBSTRING_INDEX(USER(), '@', 1);
 end//
 DELIMITER ;
 
-CREATE VIEW product AS
+CREATE VIEW inventory AS
     SELECT id ,version, guId, name, productType,productSubType,price
-    FROM product_base
+    FROM inventory_base
     WHERE tenant = SUBSTRING_INDEX(USER(), '@', 1);
     
 */
-class ProductBase {
+class InventoryBase {
 
 
    
@@ -28,14 +28,15 @@ class ProductBase {
     String guId
     String tenant
     
-    String productType
-    String productSubType
+    String iType
+    String iSubType
     BigDecimal price
 
 
 	static mapping = {
       guId column: 'guId'
-      productType column:'productType'
-      productSubType column:'productSubType'
+      iType column:'iType'
+      iSubType column:'iSubType'
+      
     }
 }

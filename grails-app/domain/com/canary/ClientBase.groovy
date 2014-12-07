@@ -25,7 +25,7 @@ class ClientBase {
       guId (maxSize:40, blank:false)
     }
 
-    static hasMany =[notes:Note,classes:ClassBase,memberships:Membership,visits:Visit,purchases:Purchase]
+    static hasMany =[notes:Note,classes:ClassBase,memberships:Membership,visits:Visit,purchasedItems:PurchasedItems]
     static belongsTo = ClassBase
     String guId
     String tenant

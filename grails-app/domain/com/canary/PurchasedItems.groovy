@@ -1,6 +1,6 @@
 package com.canary
 
-class Purchase {
+class PurchasedItems {
 
     static constraints = {
     }
@@ -8,7 +8,7 @@ class Purchase {
 	static belongsTo = [client: ClientBase]
 
     Integer purchaseTime
-    ProductBase itemPurchased
+    InventoryBase itemPurchased
     BigDecimal amount
 
 
