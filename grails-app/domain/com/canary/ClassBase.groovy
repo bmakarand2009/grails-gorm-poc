@@ -29,6 +29,8 @@ class ClassBase {
     static constraints = {
     	tenant (maxSize: 16, blank: false)
     	guId (maxSize:40, blank:false)
+      students(nullable:true)
+      room(nullable:true)
     }
 
     static hasMany =[students:ClientBase]

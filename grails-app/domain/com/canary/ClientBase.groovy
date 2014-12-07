@@ -23,6 +23,12 @@ class ClientBase {
     static constraints = {
       tenant (maxSize: 16, blank: false)
       guId (maxSize:40, blank:false)
+      notes (nullable:true)
+      classes(nullable:true)
+      memberships(nullable:true)
+      visits(nullable:true)
+      purchasedItems(nullable:true)
+      address(nullable:true)
     }
 
     static hasMany =[notes:Note,classes:ClassBase,memberships:Membership,visits:Visit,purchasedItems:PurchasedItems]
@@ -33,6 +39,7 @@ class ClientBase {
     String lName
     String barcode
     Address address
+    Boolean isTeacher
 
     String emergencyContact
     String emergencyContactPhone

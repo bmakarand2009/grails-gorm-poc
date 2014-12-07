@@ -12,6 +12,9 @@ CREATE VIEW inventory AS
     SELECT id ,version, guId, name, productType,productSubType,price
     FROM inventory_base
     WHERE tenant = SUBSTRING_INDEX(USER(), '@', 1);
+
+
+insert into inventory_base (version, guId, iSubType, iType, name, price, tenant) values (?, ?, ?, ?, ?, ?, ?)
     
 */
 class InventoryBase {
@@ -37,6 +40,6 @@ class InventoryBase {
       guId column: 'guId'
       iType column:'iType'
       iSubType column:'iSubType'
-      
+
     }
 }
