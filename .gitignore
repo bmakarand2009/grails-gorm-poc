@@ -9,8 +9,8 @@
 # general HSQL database files
 *Db.properties
 *Db.script
- 
-grails-app/conf/datasource.groovy
+
+grails-app/conf/DataSource.groovy 
 grails-app/conf/datasource.groovy.org
 
 # logs
