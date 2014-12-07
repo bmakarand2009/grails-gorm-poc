@@ -1,18 +1,6 @@
 package com.canary
 
 /*
-CREATE TABLE class_base (
-    itemId int(11) unsigned PRIMARY KEY AUTO_INCREMENT,
-    guId char(40) NOT NULL,
-    tenant VARCHAR(16) NOT NULL,
-    className VARCHAR(255) NOT NULL,
-    startTime INTEGER UNSIGNED,
-    endTime INTEGER UNSIGNED,
-    teacher VARCHAR(255),
-    roomName VARCHAR(255),
-    UNIQUE (guId)
-)DEFAULT CHARSET=latin1;
-
 DELIMITER //
 CREATE TRIGGER class_base_before_trigger BEFORE INSERT ON class_base
  FOR EACH ROW begin
@@ -21,10 +9,13 @@ CREATE TRIGGER class_base_before_trigger BEFORE INSERT ON class_base
 end//
 DELIMITER ;
 
+  
 CREATE VIEW class AS
-    SELECT itemId,guId, className,startTime,endTime,teacher,roomName
+    SELECT id ,version, guId, classSize,startTime,endTime,name,`teacher_id`,room_id
     FROM class_base
     WHERE tenant = SUBSTRING_INDEX(USER(), '@', 1);
+
+
 
 insert into class(className) values('bikram yoga class second');
 
@@ -50,6 +41,7 @@ class ClassBase {
     Integer endTime
     Integer classSize
     ClientBase teacher
+    RoomBase room
 
 
     static mapping = {
