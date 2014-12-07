@@ -100,7 +100,7 @@ log4j = {
     //appenders {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
-    debug            'org.hibernate'
+    //debug            'org.hibernate'
 
 
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
