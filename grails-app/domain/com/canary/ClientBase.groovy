@@ -16,13 +16,16 @@ CREATE VIEW client AS
     FROM client_base
     WHERE tenant = SUBSTRING_INDEX(USER(), '@', 1);
 
+insert into client_base (version, address_id, barcode, emergencyContact,
+ emergencyContactPhone, fName, guId, is_teacher, lName, tenant) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+
 */
 class ClientBase {
 
    
     static constraints = {
-      tenant (maxSize: 16, blank: false)
-      guId (maxSize:40, blank:false)
+      tenant (maxSize: 16, blank: false,nullable:true)
+      guId (maxSize:40, blank:false,nullable:true)
       notes (nullable:true)
       classes(nullable:true)
       memberships(nullable:true)
@@ -31,14 +34,14 @@ class ClientBase {
       address(nullable:true)
     }
 
-    static hasMany =[notes:Note,classes:ClassBase,memberships:Membership,visits:Visit,purchasedItems:PurchasedItems]
+    static hasMany =[notes:NoteBase,classes:ClassBase,memberships:MembershipBase,visits:VisitBase,purchasedItems:PurchasedItemsBase]
     static belongsTo = ClassBase
     String guId
     String tenant
     String fName
     String lName
     String barcode
-    Address address
+    AddressBase address
     Boolean isTeacher
 
     String emergencyContact

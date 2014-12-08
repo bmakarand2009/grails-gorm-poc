@@ -17,7 +17,7 @@ CREATE VIEW class AS
 
 
 
-insert into class(className) values('bikram yoga class second');
+insert into class_base (version, classSize, endTime, guId, name, room_id, startTime, teacher_id, tenant) values (?, ?, ?, ?, ?, ?, ?, ?, ?)
 
 databaseName = fitnessStudio
 userName = fuser1
@@ -27,8 +27,8 @@ userName = fuser1
 class ClassBase {
 
     static constraints = {
-    	tenant (maxSize: 16, blank: false)
-    	guId (maxSize:40, blank:false)
+    	tenant (maxSize: 16, blank: false,nullable:true)
+    	guId (maxSize:40, blank:false,nullable:true)
       students(nullable:true)
       room(nullable:true)
     }

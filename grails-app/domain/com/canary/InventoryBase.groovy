@@ -22,8 +22,8 @@ class InventoryBase {
 
    
     static constraints = {
-      tenant (maxSize: 16, blank: false)
-      guId (maxSize:40, blank:false)
+      tenant (maxSize: 16, blank: false,nullable:true)
+      guId (maxSize:40, blank:false,nullable:true)
     }
 
 
