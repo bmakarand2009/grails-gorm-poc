@@ -22,13 +22,12 @@ class InventoryBase {
 
    
     static constraints = {
+      guId(maxSize:40, unique:true)
       tenant (maxSize: 16, blank: false,nullable:true)
-      guId (maxSize:40, blank:false,nullable:true)
     }
 
-
-    String name
     String guId
+    String name
     String tenant
     
     String iType
@@ -37,7 +36,8 @@ class InventoryBase {
 
 
 	static mapping = {
-      guId column: 'guId'
+      //id generator: 'assigned', type: 'string'
+      guId column:'guId'
       iType column:'iType'
       iSubType column:'iSubType'
 
