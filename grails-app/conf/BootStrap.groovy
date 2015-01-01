@@ -19,10 +19,10 @@ class BootStrap {
     Integer length = 9
     String randomString = RandomStringUtils.random(length, charset.toCharArray())
 
+    /*
     def product = new InventoryBase(name:"Coconut Water",guId:randomString, tenant:"gusr", iType:"product",iSubType:"retail",price:5 ).save(failOnError:true)
 
 
-    //Add Client
     def addr = new AddressBase(street:"sindawy dr", state:"ga", city:"alpha", zip:34533,tenant:"awsuser").save(flush:true,failOnError:true)
 
     def aClient = new ClientBase(guId:randomString, tenant:"gusr",fName:"John",lName:"rokc", barcode:"kdskdssd",
@@ -39,13 +39,12 @@ class BootStrap {
     		emergencyContact:"hodkrmo", emergencyContactPhone:"2324556",isTeacher:true)
     aTeacher.save(flush:true,failOnError:true)
 
-    //Lets create a Class and Add CLients
     new ClassBase(guId:111, tenant:"awsuser",name:"classtrial1", startTime:12345, endTime:34531123, classSize:74,
     	teacher: aTeacher)
     .addToStudents(new ClientBase(guId:randomString, tenant:"awsuser",fName:"sTUDNETS",lName:"kdier", barcode:"kdskdssd",
     		emergencyContact:"jonanthan", emergencyContactPhone:"2324556",isTeacher:false))
     .save(flush:true,failOnError:true)
-
+*/
 
     }
 

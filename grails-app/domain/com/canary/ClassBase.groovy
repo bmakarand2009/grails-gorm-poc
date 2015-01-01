@@ -55,6 +55,9 @@ class ClassBase {
       startTime column:'startTime'
       endTime column:'endTime'
       classSize column:'classSize'
+      students lazy:false
+      room fetch: 'join'
+
     }
 
 }
